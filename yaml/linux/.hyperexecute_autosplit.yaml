@@ -2,6 +2,10 @@
 version: 0.1
 runson: linux
 
+runtime: 
+  language: node
+  version: 24
+
 autosplit: true
 concurrency: 4
 
@@ -9,7 +13,7 @@ cypress: true
 cypressOps:
   Build: "Hyperexecute Cypress Sample Build"
   Tags: ["HYP-Cypress", "Linux", "Autosplit", "Accessibility"]
-  BuildTags: ["HYP-Cypress-v10"]
+  BuildTags: ["HYP-Cypress-v15"]
 
 pre:
   - npm install
@@ -23,4 +27,4 @@ testDiscovery:
 
 testRunnerCommand: npx cypress run --spec ./cypress/e2e/2-advanced-examples/$test --browser=chrome-latest --headed --config video=true
 
-jobLabel: [cypress-v10, linux, autosplit]
+jobLabel: [cypress-v15, linux, autosplit]

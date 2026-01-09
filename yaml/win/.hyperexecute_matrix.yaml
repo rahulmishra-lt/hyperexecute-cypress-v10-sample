@@ -2,11 +2,15 @@
 version: 0.1
 runson: ${matrix.os}
 
+runtime: 
+  language: node
+  version: 24
+
 cypress: true
 cypressOps:
   Build: "Hyperexecute Cypress Sample Build"
   Tags: ["HYP-Cypress", "Windows", "Matrix", "Accessibility"]
-  BuildTags: ["HYP-Cypress-v10"]
+  BuildTags: ["HYP-Cypress-v15"]
 
 pre:
   - npm install
@@ -23,4 +27,4 @@ parallelism: 1
 testSuites: 
   - npx cypress run --spec ./cypress/e2e/2-advanced-examples/$files --browser=$browser --headed --config video=true
 
-jobLabel: [cypress-v10, win, matrix]
+jobLabel: [cypress-v15, win, matrix]
